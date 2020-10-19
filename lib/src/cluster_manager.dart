@@ -54,6 +54,12 @@ class ClusterManager<T> {
     _updateClusters();
   }
 
+    void setZoom(LatLng position, double zoom) {
+      if (_mapController == null)  return;
+       _mapController.animateCamera(CameraUpdate.newLatLngZoom(position, zoom));
+      updateMap();
+    }
+
   void _updateClusters() async {
     List<Cluster<T>> mapMarkers = await getMarkers();
 

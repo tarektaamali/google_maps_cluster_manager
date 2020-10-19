@@ -1,3 +1,6 @@
+## https://github.com/tarektaamali/google_maps_cluster_manager
+- Add 'setZoom' to animate Camera
+
 ## 0.2.0
 
 - Add `stopClusteringZoom` variable

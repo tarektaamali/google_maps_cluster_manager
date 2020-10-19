@@ -8,8 +8,12 @@ A Flutter package to cluster items on a [Google Maps](https://pub.dev/packages/g
 
 ## Usage
 
-To use this package, add `google_maps_cluster_manager` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
-
+To use this package, add `google_maps_cluster_manager` as a [dependency in your pubspec.yaml file]
+```
+  google_maps_cluster_manager: 
+    git:
+      url: https://github.com/tarektaamali/google_maps_cluster_manager
+```
 ### Getting Started
 
 Your map items has to be `ClusterItem<T>`. This is basically a wrapper around `LatLng` which is able to carry an object of `T` type (not mandatory). This way, when you click on a cluster, you are able to retrieve `T` objects that are gathered by the cluster.
