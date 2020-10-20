@@ -56,7 +56,14 @@ class ClusterManager<T> {
 
     void setZoom(LatLng position, double zoom) {
       if (_mapController == null)  return;
-       _mapController.animateCamera(CameraUpdate.newLatLngZoom(position, zoom));
+        _mapController.animateCamera(
+        CameraUpdate.newCameraPosition(
+          CameraPosition(
+              target:
+                  LatLng(pos.latitude, pos.longitude),
+              zoom: zoom),
+        ),
+      );
       updateMap();
     }
 
