@@ -150,3 +150,15 @@ class MapSampleState extends State<MapSample> {
     return BitmapDescriptor.fromBytes(data.buffer.asUint8List());
   }
 }
+/*
+   double getZoomLevel(radiusParam) {
+        double radius =radiusParam + radiusParam / 2;
+        double scale = radius / 500;
+         zoomLevel = (16 - log(scale) /log(2));
+         return zoomLevel;
+   }
+
+
+
+
+*/
