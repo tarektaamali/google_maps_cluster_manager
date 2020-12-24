@@ -49,23 +49,28 @@ class ClusterManager<T> {
     if (withUpdate) updateMap();
   }
 
+Future<void> setStyle() async{
+   if(_mapController == null) return;
+   await _mapController.setMapStyle(null);
+}
+
+void setzoom(LatLng pos,double zoom) {
+    if (_mapController == null) return;
+    _mapController.animateCamera(
+      CameraUpdate.newCameraPosition(
+        CameraPosition(
+            target:
+                LatLng(pos.latitude, pos.longitude),
+            zoom: zoom),
+      ),
+    );
+}
   /// Method called on map update to update cluster. Can also be manually called to force update.
   void updateMap() {
     _updateClusters();
   }
 
-    void setZoom(LatLng position, double zoom) {
-      if (_mapController == null)  return;
-        _mapController.animateCamera(
-        CameraUpdate.newCameraPosition(
-          CameraPosition(
-              target:
-                  LatLng(pos.latitude, pos.longitude),
-              zoom: zoom),
-        ),
-      );
-      updateMap();
-    }
+  
 
   void _updateClusters() async {
     List<Cluster<T>> mapMarkers = await getMarkers();
